@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -57,7 +56,7 @@ export default function StickyHeadTable() {
     setOrder(isAsc ? "desc" : "asc");
   };
 
-  const sortedTags = React.useMemo(() => {
+  const sortedTags = useMemo(() => {
     const comparator = (a: TagInfo, b: TagInfo) => {
       if (a[orderBy] < b[orderBy]) {
         return order === "asc" ? -1 : 1;
