@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { BASE_URL } from '../const/stackexchangeApi';
+import axios from "axios";
+import { BASE_URL } from "../const/stackexchangeApi";
 
 export interface TagInfo {
   name: string;
@@ -11,11 +11,11 @@ export const fetchTags = async (): Promise<TagInfo[]> => {
     const response = await axios.get(`${BASE_URL}/tags?&site=stackoverflow`);
     const tags: TagInfo[] = response.data.items.map((item: any) => ({
       name: item.name,
-      count: item.count
-    }));    
+      count: item.count,
+    }));
     return tags;
   } catch (error) {
-    console.error('Error fetching tags:', error);
+    console.error("Error fetching tags:", error);
     throw error;
   }
 };
