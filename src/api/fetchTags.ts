@@ -1,10 +1,6 @@
 import axios from "axios";
 import { BASE_URL } from "../const/stackexchangeApi";
-
-export interface TagInfo {
-  name: string;
-  count: number;
-}
+import { TagInfo } from "../types/TagInfo";
 
 export const fetchTags = async (): Promise<TagInfo[]> => {
   try {
