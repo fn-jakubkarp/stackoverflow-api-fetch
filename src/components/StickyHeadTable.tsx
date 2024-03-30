@@ -66,6 +66,7 @@ export default function StickyHeadTable() {
       {!loading && !error && (
         <>
           <TablePagination
+            sx={{ width: "100%" }}
             rowsPerPageOptions={[10, 25, 100]}
             component="div"
             count={sortedTags.length}
